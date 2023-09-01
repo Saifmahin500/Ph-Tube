@@ -3,9 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .accordion {
+          background-color: #eee;
+          color: #101010;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 20px;
+          font-weight: 500;
+          transition: 0.4s;
+        }
+        
+        .active, .accordion:hover {
+          background-color: #ccc; 
+        }
+        
+        .panel {
+          padding: 0 18px;
+          display: none;
+          background-color: white;
+          overflow: hidden;
+        }
+        </style>
 </head>
 <body>
+        <header class="container">
+            <!-- this is navbar section -->
+            <div class="navbar bg-base-100 mx-8 mt-5">
+                <div class="flex-1">
+                  <img src="image/Logo.png" alt="">
+                </div>
+                  <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                      <div class="w-12 rounded-full">
+                        <img src="image/pic.jpg" />
+                      </div>
+                    </label>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li>
+                        <a class="justify-between">
+                          Profile
+                          <span class="badge">New</span>
+                        </a>
+                      </li>
+                      <li><a>Settings</a></li>
+                      <li><a>Logout</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        </header>
+
+   <main class="container mx-auto mt-8">
+    <!-- this is main section -->
+
     
-</body>
+    <button class="accordion">Discuss the scope of var, let, and const</button>
+    <div class="panel">
+      <p class="text-xl ">var: Variables declared by var are available throughout the function in which they're declared. <br>
+        <br>
+      let:  Variables declared by let are only available inside the block where they're defined. <br>
+      <br>
+      const: Const in programming is a keyword that defines a variable or pointer as unchangeable
+
+      </p>
+    </div>
+    
+    <button class="accordion">Tell us the use cases of null and undefined</button>
+    <div class="panel">
+      <p class="text-xl ">Null: A null value in a relational database is used when the value in a column is unknown or missing. <br>
+        <br>
+        undefined : The undefined property indicates that a variable has not been assigned a value, or not declared at all.
+      </p>
+    </div>
+    
+    <button class="accordion">What do you mean by REST API?</button>
+    <div class="panel">
+      <p class="text-xl "><br>A Rest  API is an architectural style for an application program interface that uses HTTP requests to access and use dat</p>
+    </div>
+
+   </main>
+    
+    <script src="blog.js"></script>
+    
+    </body>
 </html>

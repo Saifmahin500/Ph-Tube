@@ -11,7 +11,7 @@
     <header class="container">
         <!-- this is navbar section -->
         <section class="mt-5">
-            <div class="navbar bg-base-100 flex justify-between">
+            <div class="navbar bg-base-100 flex flex-col md:flex-row lg:flex-row gap-4 justify-between">
                 <div class="mx-6">
                   <img src="image/Logo.png" alt="">
                 </div>
@@ -19,7 +19,7 @@
                     <button class="btn btn-active btn-ghost">Sort by view</button>
                 </div>
                 <div class >
-                    <button class="btn btn-error" id="DivContent">Blog</button>
+                    <a href="blog.html"><button class="btn btn-error" id="DivContent">Blog</button></a>
                 </div>
               </div>
         </section>
@@ -31,8 +31,12 @@
             
         </div>
         
-        <div class="card-container grid grid-cols-4 gap-4 mt-10" id="card-container">
+        <div class="card-container grid grid-cols-1 lg:grid-cols-4 gap-4 mt-10" id="card-container">
             
+        </div>
+
+        <div id="drawing-btn">
+
         </div>
     </main>
     <script src="index.js"></script>

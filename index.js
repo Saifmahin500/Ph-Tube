@@ -2,6 +2,8 @@ const handleCategory = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories')
     const data = await res.json();
     const finalData = data.data;
+    
+    
     // console.log(finalData);
     const btnContainer = document.getElementById('btn-container')
     finalData.forEach(category => {
@@ -19,7 +21,9 @@ const handleLoadVideo = async (categoryId) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
     const data = await res.json();
     const finalData2 = data.data;
-    // console.log(finalData2)
+    //  console.log(finalData2)
+    viewsData = finalData2;
+    // console.log(viewsData)
     
     
     const cardContainer = document.getElementById('card-container')
@@ -76,19 +80,32 @@ const handleLoadVideo = async (categoryId) => {
     }
 }
 
-    const sortViewContainer = document.getElementById('sort-view')
-    const handleSortView = async () => {
-        const res = await fetch('https://openapi.programming-hero.com/api/videos/category/1000')
-        const data = await res.json()
-        const finalView3 = data.data;
-        // console.log(finalView3)
+    // const sortViewContainer = document.getElementById('sort-view')
 
-        const sortNumberView =  finalView3.sort();
-        console.log(sortNumberView);
-
-
+    const handleView = () =>{
+    
+        const viewHighest = viewsData.sort((a,b) => parseFloat(b?.others?.views) - parseFloat (a?.others?.views))
+        console.log(viewHighest)
+    
+        handleLoadVideo(viewHighest)
     }
+
+
+
+
+
+    // const handleSortView = async () => {
+    //     const res = await fetch('https://openapi.programming-hero.com/api/videos/category/1000')
+    //     const data = await res.json()
+    //     const finalView3 = data.data;
+    //     // console.log(finalView3)
+
+    //     const sortNumberView =  finalView3.sort();
+    //     console.log(sortNumberView);
+
+
+    // }
   
-handleSortView();
+// handleSortView();
 handleLoadVideo(1000);
 handleCategory();
